@@ -20,3 +20,7 @@ jobs:
           yes '' | pmbootstrap init
           cd `pmbootstrap config aports`
           git checkout feature/lomiri
+      - name: Build
+        run: |
+          mv `pmbootstrap config aports`/lomiri/lomiri .
+          pmbootstrap build `ls .pmbootstrap/cache_git/pmaports/lomiri` --arch x86_64
