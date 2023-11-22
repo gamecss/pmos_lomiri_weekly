@@ -20,8 +20,10 @@ jobs:
           yes '' | pmbootstrap init
           cd `pmbootstrap config aports`
           git checkout feature/lomiri
-      - name: Build
+      - name: Build postmarketos-ui-lomiri
         run: |
           mv `pmbootstrap config aports`/lomiri/lomiri .
           pmbootstrap build accountsservice-ubuntu qtmir repowerd --arch x86_64
-          pmbootstrap build lomiri-system-settings lomiri postmarketos-ui-lomiri --arch x86_64
+          pmbootstrap build lomiri-system-settings 
+          mv lomiri `pmbootstrap config aports`/lomiri/
+          pmbootstrap build lomiri postmarketos-ui-lomiri --arch x86_64
