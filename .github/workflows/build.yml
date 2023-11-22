@@ -14,5 +14,3 @@ jobs:
         with:
           python-version: '3.11'
           cache: 'pip'
-      - name: Install pmbootstrap
-        run: pip install pmbootstrap
