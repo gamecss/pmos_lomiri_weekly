@@ -23,4 +23,5 @@ jobs:
       - name: Build
         run: |
           mv `pmbootstrap config aports`/lomiri/lomiri .
-          pmbootstrap build `ls $(pmbootstrap config aports)/lomiri` --arch x86_64
+          pmbootstrap build accountsservice-ubuntu qtmir repowerd --arch x86_64
+          pmbootstrap build lomiri-system-settings lomiri postmarketos-ui-lomiri --arch x86_64
