@@ -23,7 +23,9 @@ jobs:
       - name: Build postmarketos-ui-lomiri
         run: |
           mv `pmbootstrap config aports`/lomiri/lomiri .
-          pmbootstrap build accountsservice-ubuntu qtmir repowerd --arch x86_64
-          pmbootstrap build lomiri-system-settings 
+          pmbootstrap build accountsservice-ubuntu qtmir repowerd lomiri-system-settings --arch x86_64
           mv lomiri `pmbootstrap config aports`/lomiri/
           pmbootstrap build lomiri postmarketos-ui-lomiri --arch x86_64
+      - name: Build other packages
+        run: |
+          pmbootstrap build fairphone-fp4 ubuntu-themes qqc2-suru-style platform-api lomiri-terminal-app lomiri-qmltermwidget biometryd lomiri-notifications --arch x86_64
