@@ -23,4 +23,4 @@ jobs:
       - name: Build
         run: |
           mv `pmbootstrap config aports`/lomiri/lomiri .
-          pmbootstrap build `ls .pmbootstrap/cache_git/pmaports/lomiri` --arch x86_64
+          pmbootstrap build `ls $(pmbootstrap config aports)/lomiri` --arch x86_64
